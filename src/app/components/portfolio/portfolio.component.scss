@@ -1,0 +1,24 @@
+.wrapper {
+  margin-bottom: 60px;
+
+  h1 {
+    text-align: center;
+  }
+
+
+  .realProj {
+    margin: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gray;
+    min-height: 180px;
+
+    img {
+      width: 280px;
+
+      &:nth-child(2) {
+        float: right;
+      }
+    }
+  }
+}

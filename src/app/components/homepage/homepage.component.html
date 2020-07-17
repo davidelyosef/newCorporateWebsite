@@ -1,0 +1,121 @@
+<div>
+
+
+  <div id="intro">
+
+    <img src="assets/profile/avatar1.png" alt="David el Yosef">
+
+    <div class="aboutme {{ about }} animated" style="left: 5%;" id="coder">
+      <h2>
+        <span>
+          <</span>coder> </h2> <p>
+            Full Stack Web Developer who focuses on writing clean,
+            elegant and efficient code.
+            </p>
+    </div>
+
+    <div class="aboutme {{ about2 }} animated" style="right: 5%;" id="coder2">
+      <h2>
+        designer
+      </h2>
+      <p>
+        Web designer with passion for designing beautiful and functional user experiences.
+      </p>
+    </div>
+
+    <div class="binary" id="code">
+      <img src="assets/profile/binary.webp" alt="david el yosef coding">
+    </div>
+
+    <div id="designerBg">
+      <img src="assets/profile/designer.gif" alt="david el yosef web designer">
+    </div>
+  </div>
+
+  <div id="portfolio" class="homeSection">
+    <a routerLink="/portfolio" class="portLink">
+      <h3>Portfolio <span></span></h3>
+    </a>
+
+    <div class="card" *ngFor="let proj of portfolio">
+      <a [href]="proj.url" target="_blank">
+        <img src="assets/portfolio/{{ proj.name }}" alt="confusius">
+      </a>
+    </div>
+  </div>
+
+  <div id="skills" class="homeSection">
+    <h3 id="skillsTitle">Skills</h3>
+    <div id="zoomIn" style="animation-delay: 0.5s;">
+      <div class="logoSkill">
+        <img src="assets/teamwork.png" alt="skill">
+        <p>Team player, very friendly and love to help my friends to reach their goals.</p>
+      </div>
+      <div class="logoSkill">
+        <img src="assets/mobile.png" alt="skill">
+        <p>Design a responsive web pages for all devices is a top priority.</p>
+      </div>
+      <div class="logoSkill">
+        <img src="assets/graduation.png" alt="skill">
+        <p>Constantly continues to learn new technologies and keeping up-to-date with the freshest
+          trends.</p>
+      </div>
+    </div>
+
+    <div id="languages" style="animation-delay: 1s;">
+      <img src="assets/mongodb.png" title="mongoDB" alt="logo">
+      <img src="assets/mysql.png" title="mysql" alt="logo">
+      <img src="assets/javascript.jpg" title="Javascript" alt="logo">
+      <img src="assets/typescript.png" title="Typescript" alt="logo">
+      <!-- <img src="assets/socket.png" title="Socket.io" alt="logo"> -->
+      <img src="assets/react-1.png" title="React" alt="logo">
+      <img src="assets/node.png" title="Node.js" alt="logo"><br>
+      <!-- <img src="assets/html-5.png" title="HTML5" alt="logo"> -->
+      <img src="assets/bootstrap-4.png" title="Bootstrap" alt="logo">
+      <img src="assets/angular.png" title="Angular" alt="logo">
+      <img src="assets/scss.jpg" title="SASS" alt="logo">
+      <img src="assets/css3-logo.png" title="CSS3" alt="logo">
+      <img src="assets/firebase.png" title="firebase" alt="logo">
+      <img src="assets/photoshop.png" title="photoshop" alt="logo">
+      <!-- <img src="assets/PHP_Logo.png" title="PHP" alt="logo"> -->
+    </div>
+
+  </div>
+
+  <div id="contact" class="homeSection">
+
+    <div id="form" [formGroup]="contactForm">
+
+      <h3>Contact Me</h3>
+
+      <label for="fullname">Full Name</label>
+      <input type="text" name="fullname" class="form-control" formControlName="fullName">
+
+      <label for="email">Email</label>
+      <input type="email" class="form-control" formControlName="email">
+
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" class="form-control" formControlName="subject">
+
+      <label for="message">Message</label>
+      <textarea name="message" rows="5" class="form-control" formControlName="message"></textarea>
+
+      <button class="btn btn-dark" type="submit" (click)='onSubmit()'>Send Message</button>
+
+    </div>
+
+  </div>
+
+  <div class="popup animated fadeInDown {{messagePopup}}" [ngStyle]="{'background-color': bgForPopup}">
+    <div class="modal-header">
+      <button (click)="close()">&#10006;</button>
+    </div>
+    <div class="modal-body" [ngStyle]="{'color': colorForPopup}">
+      <h3>{{ messageForPopup }}</h3>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+
+</div>

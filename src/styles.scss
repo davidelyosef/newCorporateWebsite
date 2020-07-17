@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: lora;
+  src: url(./assets/fonts/Lora-VariableFont_wght.ttf);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}

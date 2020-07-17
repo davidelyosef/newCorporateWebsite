@@ -1,0 +1,58 @@
+nav {
+  position: sticky;
+  top: 0;
+  background: #2C2F34;
+  color: #fff;
+  z-index: 9;
+
+  .btn {
+    padding: 12px;
+  }
+
+  label {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    color: #fff;
+    margin: 0;
+    &:hover {
+      color: #212529;
+      background-color: #ffc107;
+      border-color: #ffc107;
+    }
+  }
+
+  .focus {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+
+  .logos {
+    float: right;
+
+    a {
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 7px;
+        margin-right: 3px;
+        margin-left: 3px;
+      }
+    }
+  }
+}
+
+nav a {
+  margin: 5px;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 425px) {
+  nav {
+    .btn {
+      padding: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}

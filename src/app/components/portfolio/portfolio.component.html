@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <h1>Portfolio</h1>
+
+    <ng-container *ngIf="portfolio">
+        <div class="realProj" *ngFor="let proj of portfolio">
+            <a [href]="proj.url" target="_blank">
+                <img src="assets/portfolio/{{ proj.name }}" [alt]="proj.name">
+            </a>
+        </div>
+
+    </ng-container>
+</div>

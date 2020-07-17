@@ -1,0 +1,209 @@
+.fadeAwayRight {
+  transition: 3s ease;
+  margin-left: 40px;
+  display: none;
+}
+
+div {
+
+  #intro {
+    text-align: center;
+    height: 95vh;
+    
+    .binary, #code {
+      visibility: hidden;
+      position: absolute;
+      top: 5%;
+      right: 0;
+      height: 90%;
+      z-index: -1;
+      img {
+        height: 100%;
+      }
+    }
+
+    #designerBg {
+      visibility: hidden;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 0;
+      max-width: 40%;
+      z-index: -1;
+    }
+  
+    .aboutme {
+      position: absolute;
+      width: 220px;
+      top: 40%;
+      transition: 1s ease !important;
+
+      &:hover {
+        transition: 1s ease;
+        transform: scale(1.1);
+      }
+  
+      h2 {
+        letter-spacing: 5px;
+        font-weight: bold;
+        font-size: 48px;
+        font-family: lora;
+      }
+  
+      p {
+        text-align: initial;
+        font-family: Roboto;
+        font-size: 16px;
+      }
+    }
+  
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  #form {
+    max-width: 450px;
+    margin: auto;
+    text-align: left;
+
+    h3 {
+      font-family: lora;
+      text-align: center;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+  }
+
+}
+
+.popup {
+  text-align: center;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -66px;
+  margin-left: -160px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 205, 205, 0.6);
+  z-index: 1;
+
+  .modal-header {
+    button {
+      right: 0;
+      position: absolute;
+      top: 0;
+      border: 0;
+      background-color: transparent;
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #intro {
+    height: auto;
+    .aboutme {
+      position: static;
+      width: auto;
+      padding: 20px;
+    }
+  }
+}
+
+.homeSection {
+  text-align: center;
+  // background-color: rgba(128, 128, 128, 0.26);
+  background-color: rgba(128, 128, 128, 0.14);
+  margin: 10px;
+  margin-bottom: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#portfolio {
+
+  .portLink {
+    text-decoration: none;
+    color: #000;
+    h3 > span {
+      width: 20px;
+      height: 20px;
+      border-right: 3px solid;
+      display: inline-block;
+      transform: rotate(45deg);
+      margin-top: 15px;
+      border-top: 3px solid;
+      transition: 0.5s ease;
+    }
+    &:hover h3 > span {
+      margin-left: 10px;
+      transition: 0.5s ease;
+    }
+  }
+
+  h3 {
+    text-align: left;
+    margin-left: 10px;
+  }
+
+
+  div {
+    width: 280px;
+    display: inline-block;
+    border: 0;
+    margin: 10px;
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+#skills {
+
+  h3 {
+    text-align: left;
+    margin-left: 10px;
+  }
+}
+
+#skills #languages img {
+  width: 120px;
+  height: 120px;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  margin: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#skills .logoSkill {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #7c7c7c;
+}
+
+#skills .logoSkill p {
+  color: #2C2F34;
+  width: 270px;
+  margin: auto;
+}
+
+#skills .logoSkill img {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(228, 178, 53);
+  opacity: 0.9;
+  border-radius: 40px;
+}

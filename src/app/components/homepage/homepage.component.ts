@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Project } from 'src/models/project';
+import { kill, abort } from 'process';
 
 @Component({
   selector: 'app-homepage',
@@ -8,6 +9,8 @@ import { Project } from 'src/models/project';
   styleUrls: ['./homepage.component.scss', 'animationshome.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  public int: number = 0;
+  public fadeByOrder: any = document.getElementsByClassName('fadeByOrder');
   public portfolio: Project[];
   public practiceProjects: any[];
   public contactForm = new FormGroup({
@@ -24,6 +27,31 @@ export class HomepageComponent implements OnInit {
   public about2: string = 'block';
 
   constructor() { }
+
+  public delayFadeInDown(): void {
+    setTimeout(() => {
+      try {
+        this.fadeByOrder[this.int].style.visibility = 'visible';
+        this.fadeByOrder[this.int].classList.add('fadeInDown');
+      }
+      catch (err) {
+
+      }
+      this.int++;
+      if (this.int < this.fadeByOrder.length) {
+        this.delayFadeInDown();
+      } else clearTimeout();
+    }, 400)
+  }
+
+  private startPortfolioAnimations(): void {
+    const timerId = setInterval(() => {
+      if (this.fadeByOrder.length > 0) {
+        this.delayFadeInDown();
+        clearInterval(timerId);
+      }
+    }, 100)
+  }
 
   ngOnInit() {
     // aboutMe events
@@ -59,13 +87,7 @@ export class HomepageComponent implements OnInit {
 
     // get data
     fetch('assets/json/portfolio.json').then(data => data.json())
-      .then(projects => {
-        this.portfolio = projects;
-        // for (let i = 0; i < this.portfolio.length; i++) {
-        //   this.portfolio[i].style.animationDelay = `${i + 1}s`;
-        //   console.log(this.portfolio[i]);
-        // }
-      });
+      .then(projects => this.portfolio = projects);
     fetch('assets/json/school_projects.json').then(data => data.json())
       .then(projects => this.practiceProjects = projects);
 
@@ -86,6 +108,7 @@ export class HomepageComponent implements OnInit {
     // screen
     const screenPosition = window.innerHeight;
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    let portfolioRan = true;
     // scroll events
     document.addEventListener("scroll", () => {
       const scrolled = window.scrollY;
@@ -97,6 +120,10 @@ export class HomepageComponent implements OnInit {
       const footerYPos = footer.getBoundingClientRect().top;
 
       // animation in skills and footer
+      if (portfolioRan && screenPosition >= portfolioYPos) {
+        this.startPortfolioAnimations();
+        portfolioRan = false;
+      }
       if (skillsYPosition < screenPosition - 20) {
         skills.classList.add('bounceInRight', 'animated');
         bounce.classList.add('bounce', 'animated');
@@ -104,6 +131,9 @@ export class HomepageComponent implements OnInit {
       }
       if (scrolled >= scrollable) {
         fadeIn.classList.add('fadeInDown', 'animated');
+      }
+      if (screenPosition > projectsYPosition) {
+        practiceProjects.classList.add('fadeIn', 'animated');
       }
 
       // exact position of the elements

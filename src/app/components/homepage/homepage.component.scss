@@ -246,6 +246,10 @@ div {
       border-radius: 10px;
     }
   }
+
+  .fadeByOrder {
+    visibility: hidden;
+  }
 }
 
 #practiceProjects .card a img:hover #practiceProjects .card .btn {

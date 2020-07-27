@@ -35,7 +35,7 @@
   <div id="portfolio" class="homeSection">
     <h3>Portfolio <span></span></h3>
 
-    <div class="card popover__wrapper animated delay-5s fadeInDown" *ngFor="let proj of portfolio">
+    <div class="card popover__wrapper animated fadeByOrder" *ngFor="let proj of portfolio">
       <a [href]="proj.url" target="_blank">
         <img src="assets/portfolio/{{ proj.name }}" alt="confusius" class="popover__title">
       </a>

@@ -49,6 +49,14 @@
     }
 }
 
+.credits {
+    font-family: Roboto;
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
 @media only screen and (max-width: 425px) {
     #footer .hidden {
         visibility: visible;

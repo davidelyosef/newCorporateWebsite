@@ -290,11 +290,12 @@ div {
 }
 
 #skills .logoSkill img {
-  width: 120px;
-  height: 120px;
-  background-color: rgb(228, 178, 53);
+  width: 130px;
+  height: 130px;
+  background-color: #fff;
   opacity: 0.9;
   border-radius: 40px;
+  object-fit: cover;
 }
 
 // intro media queries
@@ -305,6 +306,8 @@ div {
 
       img {
         max-width: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
       }
 
       .aboutme {
@@ -321,9 +324,34 @@ div {
   }
 }
 
+#contact {
+  position: relative;
+
+  img {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  #form {
+    label {
+      margin-top: .5rem;
+      margin-bottom: 0;
+    }
+    h3 {
+      font-family: Roboto;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+  }
+}
+
 @media only screen and (min-width: 1060px) {
   div {
     #intro {
+
       .aboutme {
         width: 300px;
 
@@ -370,6 +398,13 @@ div {
   #contact {
     #form {
       padding: 15px;
+      .form-control {
+        opacity: 0.8;
+      }
+    }
+
+    img {
+      opacity: 0.4;
     }
   }
 }

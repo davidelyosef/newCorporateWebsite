@@ -33,14 +33,19 @@
   </div>
 
   <div id="portfolio" class="homeSection">
-    <a routerLink="/portfolio" class="portLink">
-      <h3>Portfolio <span></span></h3>
-    </a>
+    <h3>Portfolio <span></span></h3>
 
-    <div class="card" *ngFor="let proj of portfolio">
+    <div class="card popover__wrapper animated delay-5s fadeInDown" *ngFor="let proj of portfolio">
       <a [href]="proj.url" target="_blank">
-        <img src="assets/portfolio/{{ proj.name }}" alt="confusius">
+        <img src="assets/portfolio/{{ proj.name }}" alt="confusius" class="popover__title">
       </a>
+      <div class="popover__content">
+        <h3>{{ proj.projName }}</h3>
+        <img src="assets/portfolio/{{ proj.name }}" alt="confusius" class="popover__title">
+        <p>
+          {{ proj.description }}
+        </p>
+      </div>
     </div>
   </div>
 
@@ -80,6 +85,27 @@
       <!-- <img src="assets/PHP_Logo.png" title="PHP" alt="logo"> -->
     </div>
 
+  </div>
+
+  <div id="practiceProjects" class="homeSection">
+    <h3>Just for practice =)</h3>
+
+    <div class="card popover__wrapper" *ngFor="let proj of practiceProjects">
+      <a [href]="proj.url" target="_blank">
+        <img src="assets/school_projects/{{ proj.name }}" alt="confusius" class="popover__title">
+
+        <a type="button" target="_blank" [href]="proj.src_code" class="btn btn-info">Source Code</a>
+        <a type="button" target="_blank" [href]="proj.url" class="btn btn-primary">View Website</a>
+      </a>
+
+      <div class="popover__content">
+        <h3>{{ proj.projName }}</h3>
+        <img src="assets/school_projects/{{ proj.name }}" alt="confusius" class="popover__title">
+        <p>
+          {{ proj.description }}
+        </p>
+      </div>
+    </div>
   </div>
 
   <div id="contact" class="homeSection">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('menuDropDown', { static: false }) menuDropDown: ElementRef;
 
+  public activateMenu(): void {
+    let dropDown = this.menuDropDown.nativeElement.style.display;
+    if (dropDown === 'block') 
+    this.menuDropDown.nativeElement.style.display = 'none';
+    else this.menuDropDown.nativeElement.style.display = 'block';
+  }
+  
   constructor() { }
 
   ngOnInit() {

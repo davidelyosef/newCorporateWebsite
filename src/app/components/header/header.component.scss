@@ -14,6 +14,7 @@ nav {
     border: none;
     color: #fff;
     margin: 0;
+
     &:hover {
       color: #212529;
       background-color: #ffc107;
@@ -40,6 +41,55 @@ nav {
       }
     }
   }
+
+  .dropdown {
+    float: right;
+    display: none;
+
+    button {
+      padding: 0;
+      font-size: 30px;
+      color: #fff;
+      border: 0;
+      padding-right: 15px;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #2C2F34;
+      min-width: 80px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+      margin-top: -1px;
+      padding-left: 0px;
+      margin-bottom: 0px;
+
+      a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+
+        img {
+          width: 30px;
+          height: 30px;
+          margin-left: 3px;
+        }
+
+      }
+    }
+  }
 }
 
 nav a {
@@ -54,5 +104,12 @@ nav a {
       padding-top: 10px;
       padding-bottom: 10px;
     }
+    .logos {
+      display: none;
+    }
+    .dropdown {
+      display: block;
+    }
   }
+
 }

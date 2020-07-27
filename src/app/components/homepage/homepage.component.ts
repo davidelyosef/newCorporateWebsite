@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Project } from 'src/models/project';
 
 @Component({
   selector: 'app-homepage',
@@ -7,7 +8,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./homepage.component.scss', 'animationshome.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  public portfolio: any[];
+  public portfolio: Project[];
+  public practiceProjects: any[];
   public contactForm = new FormGroup({
     fullName: new FormControl(''),
     email: new FormControl(''),
@@ -57,12 +59,21 @@ export class HomepageComponent implements OnInit {
 
     // get data
     fetch('assets/json/portfolio.json').then(data => data.json())
-      .then(projects => this.portfolio = projects);
+      .then(projects => {
+        this.portfolio = projects;
+        // for (let i = 0; i < this.portfolio.length; i++) {
+        //   this.portfolio[i].style.animationDelay = `${i + 1}s`;
+        //   console.log(this.portfolio[i]);
+        // }
+      });
+    fetch('assets/json/school_projects.json').then(data => data.json())
+      .then(projects => this.practiceProjects = projects);
 
     // header links
     let btnPortfolio = document.getElementsByClassName('btn-warning')[0];
     let btnSkills = document.getElementsByClassName('btn-warning')[1];
-    let btnContact = document.getElementsByClassName('btn-warning')[2];
+    let btnProjects = document.getElementsByClassName('btn-warning')[2];
+    let btnContact = document.getElementsByClassName('btn-warning')[3];
     // elements
     const bounce = document.getElementById("languages");
     const zoomIn = document.getElementById("zoomIn");
@@ -71,6 +82,7 @@ export class HomepageComponent implements OnInit {
     const portfolio = document.querySelector("#portfolio");
     const footer = document.querySelector("#footer");
     const contact = document.querySelector('#contact');
+    const practiceProjects = document.querySelector('#practiceProjects');
     // screen
     const screenPosition = window.innerHeight;
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
@@ -79,9 +91,10 @@ export class HomepageComponent implements OnInit {
       const scrolled = window.scrollY;
       // positions y:top
       const portfolioYPos = portfolio.getBoundingClientRect().top;
-      const footerYPos = footer.getBoundingClientRect().top;
       const skillsYPosition = skills.getBoundingClientRect().top;
+      const projectsYPosition = practiceProjects.getBoundingClientRect().top;
       const contactYPos = contact.getBoundingClientRect().top;
+      const footerYPos = footer.getBoundingClientRect().top;
 
       // animation in skills and footer
       if (skillsYPosition < screenPosition - 20) {
@@ -94,13 +107,15 @@ export class HomepageComponent implements OnInit {
       }
 
       // exact position of the elements
-      const skillsPos = scrolled + skillsYPosition - 53;
-      const portfolioPos = scrolled + portfolioYPos - 53;
-      const footerPos = scrolled + footerYPos - 53;
-      const contactPos = scrolled + contactYPos - 53;
+      const portfolioPos = scrolled + portfolioYPos - 51;
+      const skillsPos = scrolled + skillsYPosition - 51;
+      const projectsPos = scrolled + projectsYPosition - 51;
+      const contactPos = scrolled + contactYPos - 51;
+      const footerPos = scrolled + footerYPos - 51;
       // turn on header switchers
       scrolled >= portfolioPos && scrolled < skillsPos ? btnPortfolio.classList.add('focus') : btnPortfolio.classList.remove('focus');
-      scrolled >= skillsPos && scrolled < contactPos ? btnSkills.classList.add('focus') : btnSkills.classList.remove('focus');
+      scrolled >= skillsPos && scrolled < projectsPos ? btnSkills.classList.add('focus') : btnSkills.classList.remove('focus');
+      scrolled >= projectsPos && scrolled < contactPos ? btnProjects.classList.add('focus') : btnProjects.classList.remove('focus');
       scrolled >= contactPos ? btnContact.classList.add('focus') : btnContact.classList.remove('focus');
     });
   }

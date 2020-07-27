@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "6a",
+        "name": "supermarket.png",
+        "projName": "Online Supermarket",
+        "description": "Register, login and select some products and then order them while filling the appropriate data. There is an admin user who can add/delete/update products and see all of the users orders.",
+        "url": "#",
+        "src_code": "https://github.com/davidelyosef/supermarket"
+    },
+    {
+        "_id": "5a",
+        "name": "vacationsApp.png",
+        "projName": "Vacations App",
+        "description": "Sign up, login and search for a vacation deal You can add the one's you like to follows list The admin user can add/delete/update a vacation The changes will effect automaticlly on the website with Socket.io",
+        "url": "#",
+        "src_code": "https://github.com/davidelyosef/VacationsApp"
+    },
+    {
+        "_id": "4a",
+        "name": "cryptoCoins.png",
+        "projName": "Crypto Currencies",
+        "description": "Giving information and current-time data about the Cryptography market, you can search the coins in the search field, see their information and select up to 5 coins Watch the coins you picked on a chart with real-time price.",
+        "url": "https://davidelyosef.github.io/CryptoCoins",
+        "src_code": "https://github.com/davidelyosef/CryptoCoins"
+    },
+    {
+        "_id": "3a",
+        "name": "weathertracking.png",
+        "projName": "Weather Tracking",
+        "description": "Search a city in the input field or find your geolocation see its temperature in Celsius/Fahnrient for the next 5 days, you can add cities to favorites to see their temperature in your next visit.",
+        "url": "https://davidelyosef.github.io/weathertracking",
+        "src_code": "https://github.com/davidelyosef/weathertracking"
+    },
+    {
+        "_id": "2a",
+        "name": "calculator.png",
+        "projName": "Calculator",
+        "description": "A simple calculator doing simple math exercises.",
+        "url": "https://davidelyosef.github.io/calculator/",
+        "src_code": "https://github.com/davidelyosef/calculator"
+    },
+    {
+        "_id": "1a",
+        "name": "myTaskBoard.png",
+        "projName": "Task Board",
+        "description": "Write your daily tasks, save them on your machine and delete the tasks you finished.",
+        "url": "https://davidelyosef.github.io/TaskBoard",
+        "src_code": "https://github.com/davidelyosef/TaskBoard"
+    }
+]

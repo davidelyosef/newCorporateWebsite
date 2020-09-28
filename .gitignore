@@ -1,5 +1,18 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+/src
+/functions
 /public
+.firebaserc
+/browserlist
+/firebase.json
+/firestore.indexes.json
+/firestore.rules
+/tsconfig.app.json
+/tsconfig.json
+/tsconfig.spec.json
+/tslint.json
+/karma.conf.js
+/.editorconfig
 # compiled output
 /dist
 /tmp

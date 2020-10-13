@@ -1,0 +1,35 @@
+<div class="homeSection">
+  <h3 id="recommendations">Recommendations</h3>
+  <div class="slideshow-container">
+    <div class="mySlides fadeSlide">
+      <div class="numbertext">1 / 3</div>
+      <h4>Moishe Ufnik</h4>
+      <img src="http://placekitten.com/350/350" />
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam molestiae non voluptatem esse. Enim, doloribus corporis ratione unde perspiciatis provident. Tempora quisquam blanditiis incidunt dolores earum voluptatum eos placeat magni?</div>
+    </div>
+
+    <div class="mySlides fadeSlide">
+      <div class="numbertext">2 / 3</div>
+      <h4>Sonic The Kipod</h4>
+      <img src="http://placekitten.com/300/300" />
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil fuga ratione id nobis, nulla eligendi quisquam ipsam possimus rem est voluptas voluptate, praesentium maiores corrupti nemo excepturi similique molestiae voluptatum!</div>
+    </div>
+
+    <div class="mySlides fadeSlide">
+      <div class="numbertext">3 / 3</div>
+      <h4>Razer The Rabbit</h4>
+      <img src="http://placekitten.com/200/200" />
+      <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In consequuntur qui vel perspiciatis magni maxime iusto quisquam quas quam omnis, sint ea deserunt rem expedita minima eum est beatae facilis!</div>
+    </div>
+
+    <a class="prev" (click)="plusSlides(-1)" style="left: 0;">&#10094;</a>
+    <a class="next" (click)="plusSlides(1)">&#10095;</a>
+  </div>
+  <br />
+
+  <div style="text-align: center">
+    <span class="dot" (click)="currentSlide(1)"></span>
+    <span class="dot" (click)="currentSlide(2)"></span>
+    <span class="dot" (click)="currentSlide(3)"></span>
+  </div>
+</div>

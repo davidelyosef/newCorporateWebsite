@@ -12,6 +12,7 @@ import { TestComponent } from './test/test.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { RecommandationsComponent } from './components/recommandations/recommandations.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { environment } from '../environments/environment';
     PortfolioComponent,
     HeaderComponent,
     FooterComponent,
-    TestComponent
+    TestComponent,
+    RecommandationsComponent
   ],
   imports: [
     BrowserModule,

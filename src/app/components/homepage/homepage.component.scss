@@ -108,15 +108,6 @@ div {
   }
 }
 
-.homeSection {
-  text-align: center;
-  background-color: rgba(128, 128, 128, 0.14);
-  margin: 10px;
-  margin-bottom: 60px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 #practiceProjects a:hover .btn {
   display: block;
 }
@@ -184,14 +175,13 @@ div {
     text-decoration: none;
     color: rgb(228, 68, 68);
     text-align: center;
-    padding: 15px 0;
   }
 
   .popover__wrapper {
     position: relative;
     margin-top: 1.5rem;
     display: inline-block;
-    height: 175px;
+    height: 158px;
     vertical-align: top;
   }
 

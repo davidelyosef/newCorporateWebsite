@@ -1,6 +1,5 @@
 <div>
 
-
   <div id="intro">
 
     <img src="assets/profile/avatar1.png" alt="David el Yosef">
@@ -49,12 +48,14 @@
     </div>
   </div>
 
+  <app-recommandations></app-recommandations>
+
   <div id="skills" class="homeSection">
     <h3 id="skillsTitle">Skills</h3>
     <div id="zoomIn" style="animation-delay: 0.5s;">
       <div class="logoSkill">
         <img src="https://media.giphy.com/media/kcrSPE0VQL0Kaqsmek/giphy.gif" alt="skill">
-        <p>Team player, very friendly and love to help my friends to reach their goals.</p>
+        <p>Always ready to help, Support and respect others and a full motivated problem-solver.</p>
       </div>
       <div class="logoSkill">
         <img src="assets/profile/designer.gif" alt="skill">
@@ -68,31 +69,39 @@
     </div>
 
     <div id="languages" style="animation-delay: 1s;">
-      <img src="assets/mongodb.png" title="mongoDB" alt="logo">
-      <img src="assets/mysql.png" title="mysql" alt="logo">
-      <img src="assets/javascript.jpg" title="Javascript" alt="logo">
-      <img src="assets/typescript.png" title="Typescript" alt="logo">
-      <!-- <img src="assets/socket.png" title="Socket.io" alt="logo"> -->
-      <img src="assets/react-1.png" title="React" alt="logo">
-      <img src="assets/node.png" title="Node.js" alt="logo"><br>
-      <!-- <img src="assets/html-5.png" title="HTML5" alt="logo"> -->
-      <img src="assets/bootstrap-4.png" title="Bootstrap" alt="logo">
-      <img src="assets/angular.png" title="Angular" alt="logo">
-      <img src="assets/scss.jpg" title="SASS" alt="logo">
-      <img src="assets/css3-logo.png" title="CSS3" alt="logo">
-      <img src="assets/firebase.png" title="firebase" alt="logo">
-      <img src="assets/photoshop.png" title="photoshop" alt="logo">
-      <!-- <img src="assets/PHP_Logo.png" title="PHP" alt="logo"> -->
+      <img src="assets/logos/mongodb.png" title="mongoDB" alt="logo">
+      <img src="assets/logos/mysql.png" title="mysql" alt="logo">
+      <img src="assets/logos/javascript.jpg" title="Javascript" alt="logo">
+      <img src="assets/logos/typescript.png" title="Typescript" alt="logo">
+      <!-- <img src="assets/logos/socket.png" title="Socket.io" alt="logo"> -->
+      <img src="assets/logos/react-1.png" title="React" alt="logo">
+      <img src="assets/logos/node.png" title="Node.js" alt="logo"><br>
+      <img src="assets/logos/html-5.png" title="HTML5" alt="logo">
+      <img src="assets/logos/bootstrap-4.png" title="Bootstrap" alt="logo">
+      <img src="assets/logos/angular.png" title="Angular" alt="logo">
+      <img src="assets/logos/scss.jpg" title="SASS" alt="logo">
+      <img src="assets/logos/css3-logo.png" title="CSS3" alt="logo">
+      <img src="assets/logos/firebase.png" title="firebase" alt="logo">
+      <img src="assets/logos/PHP_Logo.png" title="PHP" alt="logo">
+      <img src="assets/logos/photoshop.png" title="photoshop" alt="logo">
+      <img src="assets/logos/redux.png" title="redux" alt="logo">
+      <img src="assets/logos/Python.png" title="Python" alt="logo">
+      <img src="assets/logos/git.png" title="git" alt="logo">
+      <img src="assets/logos/heroku.png" title="heroku" alt="logo">
+      <img src="assets/logos/jquery.png" title="jquery" alt="logo">
+      <img src="assets/logos/rxjs.png" title="Rxjs & Ngrx" alt="logo">
+      <img src="assets/logos/azure.png" title="azure" alt="logo">
+
     </div>
 
   </div>
 
   <div id="practiceProjects" class="homeSection">
-    <h3>Just for practice =)</h3>
+    <h3>More Projects</h3>
 
     <div class="card popover__wrapper" *ngFor="let proj of practiceProjects">
       <a [href]="proj.url" target="_blank">
-        <img src="assets/school_projects/{{ proj.name }}" alt="confusius" class="popover__title">
+        <img src="assets/self_projects/{{ proj.name }}" alt="confusius" class="popover__title">
 
         <a type="button" target="_blank" [href]="proj.src_code" class="btn btn-info">Source Code</a>
         <a type="button" target="_blank" [href]="proj.url" class="btn btn-primary">View Website</a>
@@ -100,7 +109,7 @@
 
       <div class="popover__content">
         <h3>{{ proj.projName }}</h3>
-        <img src="assets/school_projects/{{ proj.name }}" alt="confusius" class="popover__title">
+        <img src="assets/self_projects/{{ proj.name }}" alt="confusius" class="popover__title">
         <p>
           {{ proj.description }}
         </p>

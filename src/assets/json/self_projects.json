@@ -1,0 +1,66 @@
+[
+    {
+        "_id": "7a",
+        "name": "contact-keeper.png",
+        "projName": "Contact Keeper",
+        "description": "A full-stack project developed with Mongo DB, Node.JS, and React application for saving accounts in the database for logged in users, allow to update/delete/add contact and to register. Also used state management with Context API, functional components, and JWT authentications.",
+        "url": "https://contact-keeper-hds31.herokuapp.com/",
+        "src_code": "https://github.com/davidelyosef/Contact-Keeper"
+    },
+    {
+        "_id": "6a",
+        "name": "supermarket.png",
+        "projName": "Online Supermarket",
+        "description": "Register, login and select some products and then order them while filling the appropriate data. There is an admin user who can add/delete/update products and see all of the users orders.",
+        "url": "#",
+        "src_code": "https://github.com/davidelyosef/supermarket"
+    },
+    {
+        "_id": "5a",
+        "name": "vacationsApp.png",
+        "projName": "Vacations App",
+        "description": "Sign up, login and search for a vacation deal You can add the one's you like to follows list The admin user can add/delete/update a vacation The changes will effect automaticlly on the website with Socket.io",
+        "url": "#",
+        "src_code": "https://github.com/davidelyosef/VacationsApp"
+    },
+    {
+        "_id": "4a",
+        "name": "cryptoCoins.png",
+        "projName": "Crypto Currencies",
+        "description": "Giving information and current-time data about the Cryptography market, you can search the coins in the search field, see their information and select up to 5 coins Watch the coins you picked on a chart with real-time price.",
+        "url": "https://davidelyosef.github.io/CryptoCoins",
+        "src_code": "https://github.com/davidelyosef/CryptoCoins"
+    },
+    {
+        "_id": "3a",
+        "name": "it-logger.png",
+        "projName": "I.T. Logger",
+        "description": "React app to track IT department tasks and issues. Uses JSON-Server as a mock backend.",
+        "url": "https://ti-log.herokuapp.com/",
+        "src_code": "https://github.com/davidelyosef/I.T.-Logger"
+    },
+    {
+        "_id": "2a",
+        "name": "github-finder.png",
+        "projName": "Github Finder",
+        "description": "An app for finding users in Github. developed in React.js, used API calls, axios, functional components and state management with context.",
+        "url": "https://github-finder-cbb5d.web.app/",
+        "src_code": "https://github.com/davidelyosef/github-finder"
+    },
+    {
+        "_id": "1a",
+        "name": "myTaskBoard.png",
+        "projName": "Task Board",
+        "description": "Write your daily tasks, save them on your machine and delete the tasks you finished.",
+        "url": "https://davidelyosef.github.io/TaskBoard",
+        "src_code": "https://github.com/davidelyosef/TaskBoard"
+    },
+    {
+        "_id": "0a",
+        "name": "cocktailsbook.png",
+        "projName": "The Cocktails Book",
+        "description": "An app developed in Angular with API calls, Bootstrap, and Rxjs displaying recipies for cocktails.",
+        "url": "https://davidelyosef.github.io/the-cocktails-book",
+        "src_code": "https://github.com/davidelyosef/the-cocktails-book"
+    }
+]

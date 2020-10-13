@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Project } from 'src/models/project';
-import { kill, abort } from 'process';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-homepage',
@@ -9,6 +10,7 @@ import { kill, abort } from 'process';
   styleUrls: ['./homepage.component.scss', 'animationshome.component.scss']
 })
 export class HomepageComponent implements OnInit {
+
   public int: number = 0;
   public fadeByOrder: any = document.getElementsByClassName('fadeByOrder');
   public portfolio: Project[];
@@ -26,7 +28,7 @@ export class HomepageComponent implements OnInit {
   public about: string = 'block';
   public about2: string = 'block';
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
 
   public delayFadeInDown(): void {
     setTimeout(() => {
@@ -88,20 +90,22 @@ export class HomepageComponent implements OnInit {
     // get data
     fetch('assets/json/portfolio.json').then(data => data.json())
       .then(projects => this.portfolio = projects);
-    fetch('assets/json/school_projects.json').then(data => data.json())
+    fetch('assets/json/self_projects.json').then(data => data.json())
       .then(projects => this.practiceProjects = projects);
 
     // header links
     let btnPortfolio = document.getElementsByClassName('btn-warning')[0];
-    let btnSkills = document.getElementsByClassName('btn-warning')[1];
-    let btnProjects = document.getElementsByClassName('btn-warning')[2];
-    let btnContact = document.getElementsByClassName('btn-warning')[3];
+    let btnRecoms = document.getElementsByClassName('btn-warning')[1];
+    let btnSkills = document.getElementsByClassName('btn-warning')[2];
+    let btnProjects = document.getElementsByClassName('btn-warning')[3];
+    let btnContact = document.getElementsByClassName('btn-warning')[4];
     // elements
     const bounce = document.getElementById("languages");
     const zoomIn = document.getElementById("zoomIn");
     const fadeIn = document.getElementById("fadeIn");
     const skills = document.querySelector("#skills");
     const portfolio = document.querySelector("#portfolio");
+    const recoms = document.querySelector('#recommendations');
     const footer = document.querySelector("#footer");
     const contact = document.querySelector('#contact');
     const practiceProjects = document.querySelector('#practiceProjects');
@@ -116,6 +120,7 @@ export class HomepageComponent implements OnInit {
       const portfolioYPos = portfolio.getBoundingClientRect().top;
       const skillsYPosition = skills.getBoundingClientRect().top;
       const projectsYPosition = practiceProjects.getBoundingClientRect().top;
+      const recomsYPosition = recoms.getBoundingClientRect().top;
       const contactYPos = contact.getBoundingClientRect().top;
       const footerYPos = footer.getBoundingClientRect().top;
 
@@ -138,12 +143,14 @@ export class HomepageComponent implements OnInit {
 
       // exact position of the elements
       const portfolioPos = scrolled + portfolioYPos - 51;
+      const recomsPos = scrolled + recomsYPosition - 51;
       const skillsPos = scrolled + skillsYPosition - 51;
       const projectsPos = scrolled + projectsYPosition - 51;
       const contactPos = scrolled + contactYPos - 51;
       const footerPos = scrolled + footerYPos - 51;
       // turn on header switchers
-      scrolled >= portfolioPos && scrolled < skillsPos ? btnPortfolio.classList.add('focus') : btnPortfolio.classList.remove('focus');
+      scrolled >= portfolioPos && scrolled < recomsPos ? btnPortfolio.classList.add('focus') : btnPortfolio.classList.remove('focus');
+      scrolled >= recomsPos && scrolled < skillsPos ? btnRecoms.classList.add('focus') : btnRecoms.classList.remove('focus');
       scrolled >= skillsPos && scrolled < projectsPos ? btnSkills.classList.add('focus') : btnSkills.classList.remove('focus');
       scrolled >= projectsPos && scrolled < contactPos ? btnProjects.classList.add('focus') : btnProjects.classList.remove('focus');
       scrolled >= contactPos ? btnContact.classList.add('focus') : btnContact.classList.remove('focus');
@@ -157,7 +164,20 @@ export class HomepageComponent implements OnInit {
       if (emailRegex.test(form.email)) {
         form.email = form.email.toLowerCase();
         // here i send the mail
-        this.confirmSub('Thank you, I will contact you soon', '#fff', '#000', true);
+        try {
+          const newContact = firebase.functions().httpsCallable("newContact");
+          const result = newContact(form);
+          this.firebaseService.createMessage(form).then(
+            res => {
+              console.log(form, "formValue");
+            }
+          )
+          console.log(result);          
+        } catch (error) {
+          console.log();
+        }
+        this.confirmSub('Your message has been sent. We will contact you very shortly', '#fff', '#000', true);
+        
       } else {
         this.confirmSub('Ilegal email address, please type again.', '#ff4b4bf2', '#fff', false);
       }

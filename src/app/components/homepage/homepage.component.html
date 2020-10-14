@@ -37,6 +37,7 @@
     <div class="card popover__wrapper animated fadeByOrder" *ngFor="let proj of portfolio">
       <a [href]="proj.url" target="_blank">
         <img src="assets/portfolio/{{ proj.name }}" alt="confusius" class="popover__title">
+        <img src="assets/portfolio_mobile/{{ proj.name }}" alt="confusius" class="popover__title mobile">
       </a>
       <div class="popover__content">
         <h3>{{ proj.projName }}</h3>
@@ -137,7 +138,7 @@
 
       <button class="btn btn-dark" type="submit" (click)='onSubmit()'>Send Message</button>
 
-      <img src="assets/mobile(1).png" alt="contact david el yosef">
+      <img src="assets/logos/mobile(1).png" alt="contact david el yosef">
 
     </div>
 

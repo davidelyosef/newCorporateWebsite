@@ -185,6 +185,14 @@ div {
     vertical-align: top;
   }
 
+  .mobile {
+    position: absolute;
+    z-index: 1;
+    height: 90%;
+    right: -10px;
+    bottom: -10px;
+  }
+
   .popover__content {
     opacity: 0;
     visibility: hidden;

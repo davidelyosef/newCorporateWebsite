@@ -7,20 +7,31 @@ import { Component, OnInit } from "@angular/core";
 })
 export class RecommandationsComponent implements OnInit {
   public slideIndex = 1;
+  public onHover = false;
+  public interval = setInterval(() => this.plusSlides(1), 4500)
 
   constructor() {}
 
   ngOnInit() {
     this.showSlides(this.slideIndex);
-    setInterval(() => {
-      this.plusSlides(1);
-    },4500)
+
+    const divEl = document.querySelector("#my_div");
+
+    divEl.addEventListener("mouseenter", () => {
+      this.onHover = true;
+      clearInterval(this.interval);
+    });
+
+    divEl.addEventListener("mouseleave", () => {
+      this.onHover = false;
+      this.interval = setInterval(() => this.plusSlides(1), 4500);
+    });
   }
 
   public showSlides(n) {
-    var i;
-    var slides: any = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
+    let i;
+    let slides: any = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
     if (n > slides.length) {
       this.slideIndex = 1;
     }
@@ -45,30 +56,3 @@ export class RecommandationsComponent implements OnInit {
     this.showSlides((this.slideIndex = n));
   }
 }
-
-// var slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-//   var dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-// }

@@ -2,7 +2,7 @@
 /public
 /src/firebase.config.js
 /src/environments
-/functions
+/functions/node_modules
 .firebaserc
 /browserlist
 /firebase.json

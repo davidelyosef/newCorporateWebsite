@@ -1,19 +1,5 @@
 [
     {
-        "_id": "10x",
-        "name": "familygarages.png",
-        "projName": "Family Garages",
-        "description": "A website for 'Family Garages' delivery buisness.",
-        "url": "https://familygarages.com"
-    },
-    {
-        "_id": "9x",
-        "name": "jonmichaelis.png",
-        "projName": "Jon Michaelis",
-        "description": "A website for the artist Jon Michaelis.",
-        "url": "https://jonmichaelis-df88d.firebaseapp.com/"
-    },
-    {
         "_id": "8x",
         "name": "uriblayer.png",
         "projName": "Uri Blayer",
@@ -62,5 +48,19 @@
         "projName": "Katya Filmus Art",
         "description": "An official website for the artist Katya Izabel Filmus",
         "url": "https://katyaizabelfilmus.com"
+    },
+    {
+        "_id": "10x",
+        "name": "familygarages.png",
+        "projName": "Family Garages",
+        "description": "A website for 'Family Garages' delivery buisness.",
+        "url": "https://familygarages.com"
+    },
+    {
+        "_id": "9x",
+        "name": "jonmichaelis.png",
+        "projName": "Jon Michaelis",
+        "description": "A website for the artist Jon Michaelis.",
+        "url": "https://jonmichaelis-df88d.firebaseapp.com/"
     }
 ]

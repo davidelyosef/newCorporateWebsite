@@ -110,6 +110,10 @@ nav a {
     }
     .dropdown {
       display: block;
+
+      .dropdown-content {
+        margin-top: -9px;
+      }
     }
   }
 

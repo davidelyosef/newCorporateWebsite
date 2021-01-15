@@ -146,7 +146,7 @@ export class HomepageComponent implements OnInit {
       const recomsPos = scrolled + recomsYPosition - 51;
       const skillsPos = scrolled + skillsYPosition - 51;
       const projectsPos = scrolled + projectsYPosition - 51;
-      const contactPos = scrolled + contactYPos - 51;
+      const contactPos = scrolled + contactYPos - 251;
       const footerPos = scrolled + footerYPos - 51;
       // turn on header switchers
       scrolled >= portfolioPos && scrolled < recomsPos ? btnPortfolio.classList.add('focus') : btnPortfolio.classList.remove('focus');
